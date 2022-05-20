@@ -44,7 +44,7 @@ export default {
                 <label for="" class="capitalize">email</label>
                 <input
                     class="border rounded focus:outline-none px-2 py-1 focus:border-cyan-500"
-                    type="text"
+                    type="email"
                     v-model="email"
                 />
             </div>
@@ -53,8 +53,9 @@ export default {
                 <label for="" class="capitalize">no telfon</label>
                 <input
                     class="border rounded focus:outline-none px-2 py-1 focus:border-cyan-500"
-                    type="text"
+                    type="number"
                     v-model="phone"
+                    required
                 />
             </div>
 
@@ -62,8 +63,9 @@ export default {
                 <label for="" class="capitalize">jumlah roti</label>
                 <input
                     class="border rounded focus:outline-none px-2 py-1 focus:border-cyan-500"
-                    type="text"
+                    type="number"
                     v-model="quantity"
+                    required
                 />
             </div>
 
