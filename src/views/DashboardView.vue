@@ -1,16 +1,12 @@
 <script>
-import { mapActions, mapGetters, mapState } from 'pinia';
+import { mapGetters, mapState } from 'pinia';
 import { useOrderStore } from '@/stores/order';
-import { ref } from 'vue';
 
 export default {
     computed: {
         ...mapState(useOrderStore, ['filter']),
 
         ...mapGetters(useOrderStore, ['getOrder', 'getTotal']),
-    },
-    methods: {
-        ...mapActions(useOrderStore, ['increment', 'order']),
     },
 };
 </script>

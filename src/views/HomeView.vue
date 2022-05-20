@@ -1,10 +1,10 @@
 <script>
-import { mapActions, mapState } from 'pinia';
+import { mapActions } from 'pinia';
 import { useOrderStore } from '@/stores/order';
 
 export default {
     methods: {
-        ...mapActions(useOrderStore, ['increment', 'order']),
+        ...mapActions(useOrderStore, ['order']),
     },
 };
 </script>
