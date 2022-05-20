@@ -5,7 +5,7 @@ import { ref } from 'vue';
 
 export default {
     computed: {
-        ...mapState(useOrderStore, ['filter', 'orderType']),
+        ...mapState(useOrderStore, ['filter']),
 
         ...mapGetters(useOrderStore, ['getOrder', 'getTotal']),
     },
@@ -38,71 +38,21 @@ export default {
             </button>
         </div>
 
-        <div v-if="orderType == 1" class="mt-5">
-            <table
-                class="w-full border"
-                v-for="filter in filter"
-                :key="filter.id"
-            >
-                <tr>
-                    <td>Nama</td>
-                    <td>Email</td>
-                    <td>No Hp</td>
-                    <td>Jumlah Roti</td>
-                    <td>Keterangan</td>
-                </tr>
-                <tr>
-                    <td>{{ filter.name }}</td>
-                    <td>{{ filter.email }}</td>
-                    <td>{{ filter.phone }}</td>
-                    <td>{{ filter.quantity }}</td>
-                    <td>{{ filter.note }}</td>
-                </tr>
-            </table>
-        </div>
-        <div v-if="orderType == 2" class="mt-5">
-            <table
-                class="w-full border"
-                v-for="filter in filter"
-                :key="filter.id"
-            >
-                <tr>
-                    <td>Nama</td>
-                    <td>Email</td>
-                    <td>No Hp</td>
-                    <td>Jumlah Roti</td>
-                    <td>Keterangan</td>
-                </tr>
-                <tr>
-                    <td>{{ filter.name }}</td>
-                    <td>{{ filter.email }}</td>
-                    <td>{{ filter.phone }}</td>
-                    <td>{{ filter.quantity }}</td>
-                    <td>{{ filter.note }}</td>
-                </tr>
-            </table>
-        </div>
-        <div v-if="orderType == 3" class="mt-5">
-            <table
-                class="w-full border"
-                v-for="filter in filter"
-                :key="filter.id"
-            >
-                <tr>
-                    <td>Nama</td>
-                    <td>Email</td>
-                    <td>No Hp</td>
-                    <td>Jumlah Roti</td>
-                    <td>Keterangan</td>
-                </tr>
-                <tr>
-                    <td>{{ filter.name }}</td>
-                    <td>{{ filter.email }}</td>
-                    <td>{{ filter.phone }}</td>
-                    <td>{{ filter.quantity }}</td>
-                    <td>{{ filter.note }}</td>
-                </tr>
-            </table>
-        </div>
+        <table class="w-full border mt-5">
+            <tr>
+                <td>Nama</td>
+                <td>Email</td>
+                <td>No Hp</td>
+                <td>Jumlah Roti</td>
+                <td>Keterangan</td>
+            </tr>
+            <tr v-for="filter in filter" :key="filter.id">
+                <td>{{ filter.name }}</td>
+                <td>{{ filter.email }}</td>
+                <td>{{ filter.phone }}</td>
+                <td>{{ filter.quantity }}</td>
+                <td>{{ filter.note }}</td>
+            </tr>
+        </table>
     </main>
 </template>

@@ -3,13 +3,11 @@ import { defineStore } from 'pinia';
 export const useOrderStore = defineStore('orderID', {
     state: () => ({
         array: [],
-        orderType: '',
         filter: [],
     }),
 
     getters: {
         getOrder: (state) => (id) => {
-            state.orderType = id;
             state.filter = state.array.filter(
                 (element) => element.typeOrder == id,
             );
